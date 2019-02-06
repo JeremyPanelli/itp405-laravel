@@ -3,6 +3,7 @@
 @section('title', 'Tracks')
 
 @section('main')
+    <button onclick="window.location.href = '/tracks/new'">New Track</button>
     <table class="table">
         <tr>
             <th>Track Name</th>
@@ -10,7 +11,7 @@
             <th>Artist Name</th>
             <th>Price</th>
         </tr>
-        @foreach($tracks as $track)
+        @forelse($tracks as $track)
             <tr>
                 <td>
                     {{$track->trackName}}
@@ -25,7 +26,10 @@
                     {{$track->price}}
                 </td>
             </tr>
-
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="4">No tracks found</td>
+            </tr>
+        @endforelse
     </table>
 @endsection
