@@ -11,11 +11,6 @@
     Route::post('/settings/update', 'SettingController@update');
   });
 
-  Route::middleware(['maintenance'])->group(function () {
-    Route::get('/', 'GenresController@index');
-
-  Route::get('/maintenance', 'MaintenanceController@index');
-
   Route::middleware(['maintenance'])->group(function(){
     Route::get('/genres', 'GenresController@index');
     Route::get('/genres/{id}/edit', 'GenresController@edit');
