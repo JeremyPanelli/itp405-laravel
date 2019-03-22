@@ -1,5 +1,5 @@
 
-let connection = new WebSocket('https://itp405-laravel-jeremypanelli.herokuapp.com');
+let connection = new WebSocket('wss://itp405-laravel-jeremypanelli.herokuapp.com');
 
 connection.onopen = () => {
   console.log('connected from the front end');
@@ -20,8 +20,6 @@ connection.onmessage = (event) => {
 
 document.getElementById('doc').addEventListener('keyup', (event) => {
   event.preventDefault();
-  console.log('hi');
-
   let message = document.getElementById('doc').innerHTML;
   connection.send(message);
   console.log(message);
