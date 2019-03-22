@@ -3,6 +3,7 @@
   Route::get('/login', 'LoginController@index');
   Route::post('/login', 'LoginController@login');
   Route::get('/logout', 'LoginController@logout');
+  Route::get('/docs', 'DocsController@index');
 
   Route::get('/maintenance', 'MaintenanceController@index');
 
