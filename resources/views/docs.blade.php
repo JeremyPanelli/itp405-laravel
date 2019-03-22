@@ -5,7 +5,7 @@
 @section('main')
 <!doctype html>
 <div id="doc" contenteditable="true">
-  Edit This
+  This is your's to edit!
 </div>
-<script src="js/main.js"></script>
-@endsection
+ <script src="{{secure_asset('js/main.js')}}"></script>
+ @endsection

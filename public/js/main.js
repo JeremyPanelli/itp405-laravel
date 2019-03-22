@@ -11,16 +11,16 @@ connection.onerror = () => {
 
 connection.onmessage = (event) => {
   console.log('received message', event.data);
-  document.getElementById('doc').innerHTML = event.data;
+  document.getElementById('#doc').innerHTML = event.data;
   const range = window.getSelection();
-  let div = document.getElementById('doc');
+  let div = document.getElementById('#doc');
   range.selectAllChildren(div);
   range.collapseToEnd();
 };
 
-document.getElementById('doc').addEventListener('keyup', (event) => {
+document.getElementById('#doc').addEventListener('keyup', (event) => {
   event.preventDefault();
-  let message = document.getElementById('doc').innerHTML;
+  let message = document.getElementById('#doc').innerHTML;
   connection.send(message);
   console.log(message);
 });
