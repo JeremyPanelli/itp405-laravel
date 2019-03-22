@@ -2,25 +2,24 @@
 let connection = new WebSocket('wss://itp405-laravel-jeremypanelli.herokuapp.com');
 
 connection.onopen = () => {
-  console.log('connected from the front end');
+  console.log('connected from the frontend');
 };
 
 connection.onerror = () => {
-  console.log('failed');
+  console.log('failed to connect from the frontend');
 };
 
 connection.onmessage = (event) => {
   console.log('received message', event.data);
-  document.getElementById('#doc').innerHTML = event.data;
+  let edit = document.getElementById('doc');
+  edit.innerText = event.data;
   const range = window.getSelection();
-  let div = document.getElementById('#doc');
-  range.selectAllChildren(div);
+  range.selectAllChildren(edit);
   range.collapseToEnd();
 };
 
-document.getElementById('#doc').addEventListener('keyup', (event) => {
+document.getElementById('doc').addEventListener('input', (event) => {
   event.preventDefault();
-  let message = document.getElementById('#doc').innerHTML;
+  let message = document.getElementById('doc').innerText;
   connection.send(message);
-  console.log(message);
 });
