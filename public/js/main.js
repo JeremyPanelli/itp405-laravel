@@ -1,5 +1,5 @@
 
-let connection = new WebSocket('wss://itp405-laravel-jeremypanelli.herokuapp.com');
+let connection = new WebSocket('wss://panelli-node.herokuapp.com/');
 
 connection.onopen = () => {
   console.log('connected from the frontend');
