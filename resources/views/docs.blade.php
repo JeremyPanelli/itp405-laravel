@@ -7,5 +7,5 @@
 <div id="doc" contenteditable="true">
   This is your's to edit!
 </div>
- <script src="/js/main.js"></script>
+ <script src="/public/js/main.js"></script>
  @endsection
